@@ -1,12 +1,6 @@
 const $ = window.$;
 $(document).ready(function () {
-  /**
-   * Task 2:
-   * Listen for changes on each INPUT checkbox tag:
-   * - if the checkbox is checked, you must store the Amenity ID in a variable (dictionary or list)
-   * - if the checkbox is unchecked, you must remove the Amenity ID from the variable
-   * - update the H4 tag inside the DIV Amenities with the list of Amenities checked
-   **/
+//Listen for changes on each INPUT checkbox
   const myAmenities = {};
   const myStates = {};
   const myCities = {};
@@ -54,12 +48,7 @@ $(document).ready(function () {
     $('div.locations > h4').text(myList);
   });
 
-  /**
-   * Task 3:
-   * Request http://0.0.0.0:5001/api/v1/status/:
-   * - If in the status is “OK”, add the class available to the DIV#api_status
-   * - Otherwise, remove the class available to the DIV#api_status
-   **/
+  //Request http://0.0.0.0:5001/api/v1/status/
   const apiStatus = $('DIV#api_status');
   $.ajax('http://0.0.0.0:5001/api/v1/status/').done(function (data) {
     if (data.status === 'OK') {
