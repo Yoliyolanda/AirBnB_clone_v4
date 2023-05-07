@@ -46,13 +46,8 @@ $(document).ready(function () {
     myList = checkBoxActions(this, myCities, myStates);
     $('div.locations > h4').text(myList);
   });
-
-  /**
-   * Task 3:
-   * Request http://0.0.0.0:5001/api/v1/status/:
-   * - If in the status is “OK”, add the class available to the DIV#api_status
-   * - Otherwise, remove the class available to the DIV#api_status
-   * **/
+  
+  //Request http://0.0.0.0:5001/api/v1/status/
   const apiStatus = $('DIV#api_status');
   $.ajax('http://0.0.0.0:5001/api/v1/status/').done(function (data) {
     if (data.status === 'OK') {
